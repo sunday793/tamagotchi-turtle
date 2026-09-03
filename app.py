@@ -1,7 +1,7 @@
 import flet as ft
 import asyncio
 import time
-import database
+# import database
 
 class MyTurtie():
     
@@ -73,7 +73,7 @@ class MainWindow(ft.SafeArea):
         img_smiling = ft.Image(src="turtie_smiling.png", opacity=0.0)
         img_jumping = ft.Image(src="turtie_jumping.png", opacity=0.0)
         img_eating = ft.Image(src="eating.png", width=W, height=H, opacity=0.0)
-        img_sad = ft.Image(src="sad.png", width=W, height=H, opacity=0.0)
+        img_sad = ft.Image(src="turtie_sad.png", width=W, height=H, opacity=0.0)
         img_love = ft.Image(src="love.png", width=W, height=H, opacity=0.0)
         img_love_2 = ft.Image(src="love_2.png", width=W, height=H, opacity=0.0)
         img_love_3 = ft.Image(src="love_3.png", width=W, height=H, opacity=0.0)
@@ -294,7 +294,7 @@ class MainWindow(ft.SafeArea):
             content=ui_content,
             width=350,
             height=500,
-            image=ft.DecorationImage(src="background.png"),
+            image=ft.DecorationImage(src="back.png"),
             alignment=ft.Alignment.CENTER,
             padding=ft.Padding(bottom=40)
         )
