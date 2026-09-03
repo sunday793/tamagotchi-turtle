@@ -74,4 +74,4 @@ pytest
 
 Sofia Sineglazova
 
-© 2026
+© 2026 Sofia Sineglazova
