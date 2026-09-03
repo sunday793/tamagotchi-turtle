@@ -11,7 +11,6 @@ class MainWindow(ft.SafeArea):
     
     def __init__(self):
         """Initialize the main window with game logic."""
-        super().__init__()
         self.turtie = MyTurtie()
         self.controller = GameController(self.turtie)
     

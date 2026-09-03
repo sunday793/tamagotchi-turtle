@@ -48,4 +48,4 @@ class GameController:
                     self.turtie.decrease_health()
                     self.tick_count = 0
 
-                on_update()
+                await on_update()
