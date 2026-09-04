@@ -22,16 +22,23 @@ jobs:
         with:
           python-version: '3.11'
 
+      # Add this step to install Flutter
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      # Add this step to ensure your system can compile web dependencies
+      - name: Enable Flutter Web Build
+        run: flutter config --enable-web
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install flet
-          # If you have a requirements.txt file, uncomment the line below:
-          # pip install -r requirements.txt
 
       - name: Build Web App
         run: |
-          # Automatically uses your repo name (tamagotchi-turtle) as the base subpath
           flet build web --base-url /${{ github.event.repository.name }} --route-url-strategy hash
 
       - name: Upload Pages Artifact
