@@ -22,7 +22,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      # Fix #1: Use the official Flutter runner action to avoid mid-build prompts
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v2
         with:
@@ -36,17 +35,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install flet
 
-      # Fix #2: Include the --yes flag to force-skip any interactive questions
       - name: Build Web App
         run: |
           flet build web --yes --base-url /${{ github.event.repository.name }} --route-url-strategy hash
 
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v4.0.0
+        uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
-          name: web-build-artifact
-          retention-days: 20
+         
 
   deploy:
     name: Deploy to GitHub Pages
